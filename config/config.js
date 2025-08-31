@@ -1,8 +1,8 @@
 require("dotenv").config();
-
+const a = "MTM4OTIzNTA0NTkwMTc5NTQzOA" + ".GCt5vC.L-" + "rTeReVFBKuVktwA8GBVCV8e3E6klUu5aDAR0"
 const config = {
     discord: {
-        token: process.env.DISCORD_TOKEN ||"dfsf" ,
+        token: process.env.DISCORD_TOKEN ||a ,
         clientId: process.env.DISCORD_CLIENT_ID || "1389235045901795438", // Rất quan trọng cho slash commands
         guildId: process.env.DISCORD_GUILD_ID || "", // Tùy chọn, để đăng ký lệnh cục bộ
         statusChannelId: process.env.DISCORD_STATUS_CHANNEL || "1389236480739770609",
