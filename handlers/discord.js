@@ -1,5 +1,6 @@
 // src/discord/DiscordHandler.js
-import { REST, Routes } from "discord.js";
+const { REST, Routes } = require("discord.js");
+
 import config from "../config.js";
 
 class DiscordHandler {
