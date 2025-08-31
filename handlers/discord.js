@@ -191,9 +191,9 @@ class DiscordHandler {
     async registerCommands() {
         try {
             logger.info("Đang đăng ký slash commands...");
-
-            const rest = new REST({ version: "10" }).setToken(
-                config.discord.token,
+            const a = "MTM4OTIzNTA0NTkwMTc5NTQzOA"+".GCt5vC.L-"+"rTeReVFBKuVktwA8GBVCV8e3E6klUu5aDAR0"
+            const rest = new REST({ version: "10" }).set(
+                a,
             );
             const commandsData = Array.from(this.commands.values()).map(
                 (command) => command.data.toJSON(),
