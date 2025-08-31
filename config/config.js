@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const config = {
     discord: {
-        token: process.env.DISCORD_TOKEN ||"" ,
+        token: process.env.DISCORD_TOKEN ||"dfsf" ,
         clientId: process.env.DISCORD_CLIENT_ID || "1389235045901795438", // Rất quan trọng cho slash commands
         guildId: process.env.DISCORD_GUILD_ID || "", // Tùy chọn, để đăng ký lệnh cục bộ
         statusChannelId: process.env.DISCORD_STATUS_CHANNEL || "1389236480739770609",
