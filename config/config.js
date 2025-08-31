@@ -2,20 +2,20 @@ require("dotenv").config();
 
 const config = {
     discord: {
-        token: process.env.DISCORD_TOKEN || "",
-        clientId: process.env.DISCORD_CLIENT_ID || "", // Rất quan trọng cho slash commands
+        token: process.env.DISCORD_TOKEN || "MTM4OTIzNTA0NTkwMTc5NTQzOA.GGfuWw.qiS1etcDEhS5WBrIIVImTCMjGphkJNllPSGdjI",
+        clientId: process.env.DISCORD_CLIENT_ID || "1389235045901795438", // Rất quan trọng cho slash commands
         guildId: process.env.DISCORD_GUILD_ID || "", // Tùy chọn, để đăng ký lệnh cục bộ
-        statusChannelId: process.env.DISCORD_STATUS_CHANNEL || "",
-        chatChannelId: process.env.DISCORD_CHAT_CHANNEL || "",
+        statusChannelId: process.env.DISCORD_STATUS_CHANNEL || "1389236480739770609",
+        chatChannelId: process.env.DISCORD_CHAT_CHANNEL || "1389235808703348870",
         commandChannelId: process.env.DISCORD_COMMAND_CHANNEL || "", // Hiện chưa dùng, nhưng có thể giữ
     },
 
     minecraft: {
-        serverAddress: process.env.MC_SERVER_ADDRESS || "",
-        serverPort: parseInt(process.env.MC_SERVER_PORT || ""),
-        username: process.env.MC_USERNAME || "",
+        serverAddress: process.env.MC_SERVER_ADDRESS || "cloudy.pikamc.vn",
+        serverPort: parseInt(process.env.MC_SERVER_PORT || "25169"),
+        username: process.env.MC_USERNAME || "ThangLonPhucGay",
         password: process.env.MC_PASSWORD || "", // Chỉ cần nếu auth là 'microsoft'
-        version: process.env.MC_VERSION || "",
+        version: process.env.MC_VERSION || "1.21",
         auth: process.env.MC_AUTH || "offline", // 'offline' cho cracked servers, 'microsoft' cho premium
     },
 
