@@ -1,0 +1,20 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "Bot Discord tự động để giữ server Minecraft Aternos hoạt động 24/7 với tích hợp Discord và xử lý lệnh teleport trong game.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "minecraft-data": "^3.91.0",
+    "minecraft-protocol": "^1.57.0",
+    "mineflayer": "^4.29.0"
+  }
+}

@@ -1,0 +1,83 @@
+Prompt: Bot Treo Server Minecraft Aternos 24/7, Tương Tác Discord và Dịch Chuyển Theo Lệnh Chat In-Game
+Bạn là một AI chuyên viết mã, hãy phát triển một bot Discord sử dụng Mineflayer để giữ cho server Minecraft Aternos của tôi hoạt động 24/7 bằng cách duy trì sự hiện diện của bot trong game. Bot sẽ không thực hiện bất kỳ hành động nào để khởi động hay dừng server Aternos, mà chỉ tập trung vào việc treo server, cung cấp các tương tác thông tin qua Discord, và phản ứng với lệnh dịch chuyển (teleport) từ chat in-game.
+
+Để thực hiện lệnh dịch chuyển, bot cần được cấp quyền admin (OP) trên server Minecraft Aternos.
+
+Các Tính Năng Cần Có:
+Chức năng chính: Treo Server Aternos 24/7:
+
+Bot phải tự động đăng nhập vào server Minecraft Aternos.
+
+Sử dụng Mineflayer để mô phỏng hoạt động người chơi (di chuyển nhẹ, nhảy, xoay camera ngẫu nhiên) để ngăn server bị đóng do không có người chơi.
+
+Có cơ chế tự động kết nối lại nếu bot bị ngắt kết nối khỏi server Minecraft (ví dụ: server reset, lỗi mạng).
+
+Xử lý các thông báo từ server (ví dụ: "Server đang khởi động", "Server đã đóng", "Server đầy", v.v.) và thông báo trạng thái này lên kênh Discord được chỉ định.
+
+Tuyệt đối không tác động vào việc khởi động hay dừng server Aternos.
+
+Tương Tác Discord & Phản ứng Lệnh In-Game:
+Lệnh cơ bản qua Discord:
+
+/status: Hiển thị trạng thái hiện tại của server Minecraft (trực tuyến/ngoại tuyến, số lượng người chơi, tên server).
+
+/players: Liệt kê tất cả người chơi hiện đang online trên server Minecraft.
+
+/say <tin nhắn>: Cho phép người dùng Discord gửi tin nhắn vào chat Minecraft thông qua bot.
+
+Phản ứng lệnh dịch chuyển In-Game (Yêu cầu Bot là OP trong game):
+
+Khi một người chơi bất kỳ trong Minecraft chat một tin nhắn bắt đầu bằng .tp, bot sẽ đọc và phân tích cú pháp của tin nhắn đó.
+
+Ví dụ: Nếu Player1 chat .tp Player2, bot sẽ hiểu rằng Player1 muốn dịch chuyển đến vị trí của Player2.
+
+Bot sẽ phản hồi bằng cách gửi lệnh /teleport Player1 Player2 vào chat Minecraft.
+
+Nếu lệnh .tp không có đối số thứ hai (tức là chỉ .tp hoặc .tp <tên người chơi không tồn tại>), bot có thể gửi một tin nhắn phản hồi trong game thông báo cú pháp đúng hoặc thông báo người chơi không tìm thấy.
+
+Bot cần có khả năng xử lý các trường hợp:
+
+Người chơi gửi lệnh .tp nhưng không có đủ quyền trong server để dịch chuyển người khác (trong trường hợp này, bot vẫn sẽ cố gắng dịch chuyển nếu bot có OP).
+
+Người chơi được yêu cầu dịch chuyển không online.
+
+Cú pháp lệnh .tp không hợp lệ.
+
+Kênh thông báo Discord:
+
+Thiết lập một kênh Discord riêng biệt để bot gửi các thông báo về trạng thái server (khởi động, tắt, sự cố kết nối, v.v.).
+
+Khi bot thực hiện một lệnh dịch chuyển thành công hoặc gặp lỗi, nó sẽ thông báo lên kênh Discord này (ví dụ: "Bot đã dịch chuyển Player1 đến Player2", hoặc "Lỗi: Không tìm thấy Player2 để dịch chuyển").
+
+Nhật ký chat Minecraft:
+
+Hiển thị tất cả các tin nhắn chat từ Minecraft lên một kênh Discord được chỉ định.
+
+Cấu hình:
+Cho phép cấu hình các thông số quan trọng thông qua biến môi trường Replit hoặc một file cấu hình dễ chỉnh sửa (ví dụ: .env hoặc config.json). Các thông số này bao gồm:
+
+Discord Bot Token: Token của bot Discord.
+
+Server Aternos Address/IP: Địa chỉ IP hoặc domain của server Aternos.
+
+Minecraft Username/Password: Tài khoản Minecraft mà bot sẽ sử dụng để đăng nhập.
+
+Discord Channel IDs: ID của các kênh Discord dùng để thông báo trạng thái, chat Minecraft, và nhận lệnh.
+
+Prefix Lệnh Dịch Chuyển: Ký tự hoặc chuỗi ký tự khởi đầu cho lệnh dịch chuyển trong game (ví dụ: ., !).
+
+Triển khai trên Replit:
+Mã phải được tối ưu để chạy ổn định và hiệu quả trên nền tảng Replit.
+
+Đảm bảo việc sử dụng tài nguyên là hợp lý để tránh vượt quá giới hạn của Replit.
+
+Yêu cầu chung:
+Ngôn ngữ lập trình: JavaScript/Node.js (ưu tiên do Mineflayer và Discord.js hoạt động tốt với JS).
+
+Thư viện: Mineflayer, Discord.js (hoặc tương đương), dotenv (để quản lý biến môi trường).
+
+Cấu trúc mã: Mã phải rõ ràng, dễ hiểu, có comment đầy đủ và được tổ chức tốt.
+
+Xử lý lỗi: Có cơ chế xử lý lỗi mạnh mẽ cho các trường hợp như mất kết nối, lỗi đăng nhập, lỗi Discord API, và đặc biệt là lỗi khi phân tích cú pháp lệnh chat hoặc khi thực hiện lệnh dịch chuyển trong game.
+
+Mục tiêu của bot là cung cấp một giải pháp tự động và đáng tin cậy để giữ server Aternos luôn hoạt động bằng cách duy trì sự hiện diện, đồng thời cho phép người dùng Discord xem thông tin server, chat trong game, và đặc biệt là thực hiện lệnh dịch chuyển giữa người chơi thông qua chat in-game, với điều kiện bot được cấp quyền OP trong Minecraft.
